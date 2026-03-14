@@ -56,46 +56,60 @@ CREATE TABLE pagamentos (
 
 --Popule elas:
 INSERT INTO categorias (idcategoria,descricao) 
-VALUES ('NULL','Eletrônicos');
+VALUES (NULL,'Eletrônicos');
 INSERT INTO categorias (idcategoria,descricao) 
-VALUES ('NULL','Informática');
+VALUES (NULL,'Informática');
 INSERT INTO categorias (idcategoria,descricao) 
-VALUES ('NULL','Celulares');
+VALUES (NULL,'Celulares');
 INSERT INTO categorias (idcategoria,descricao) 
-VALUES ('NULL','Games');
+VALUES (NULL,'Games');
 INSERT INTO categorias (idcategoria,descricao) 
-VALUES ('NULL','Livros');
+VALUES (NULL,'Livros');
 INSERT INTO categorias (idcategoria,descricao) 
-VALUES ('NULL','Roupas');
+VALUES (NULL,'Roupas');
 INSERT INTO categorias (idcategoria,descricao) 
-VALUES ('NULL','Calçados');
+VALUES (NULL,'Calçados');
 INSERT INTO categorias (idcategoria,descricao) 
-VALUES ('NULL','Acessórios');
+VALUES (NULL,'Acessórios');
 INSERT INTO categorias (idcategoria,descricao) 
-VALUES ('NULL','Casa');
+VALUES (NULL,'Casa');
 INSERT INTO categorias (idcategoria,descricao) 
-VALUES ('NULL','Cozinha');
+VALUES (NULL,'Cozinha');
 INSERT INTO categorias (idcategoria,descricao) 
-VALUES ('NULL','Ferramentas');
+VALUES (NULL,'Ferramentas');
 INSERT INTO categorias (idcategoria,descricao) 
-VALUES ('NULL','Automotivo');
+VALUES (NULL,'Automotivo');
 
-INSERT INTO clientes (nome,email,cidade) VALUES
-('Carlos Silva','carlos@email.com','São Paulo'),
-('Maria Souza','maria@email.com','Rio de Janeiro'),
-('João Pereira','joao@email.com','Curitiba'),
-('Ana Costa','ana@email.com','Porto Alegre'),
-('Pedro Lima','pedro@email.com','Belo Horizonte'),
-('Lucas Alves','lucas@email.com','Campinas'),
-('Fernanda Rocha','fernanda@email.com','Salvador'),
-('Ricardo Gomes','ricardo@email.com','Florianópolis'),
-('Juliana Martins','juliana@email.com','Brasília'),
-('Bruno Carvalho','bruno@email.com','Fortaleza'),
-('Patricia Melo','patricia@email.com','Recife'),
-('André Ribeiro','andre@email.com','Natal'),
-('Camila Freitas','camila@email.com','Manaus'),
-('Thiago Nunes','thiago@email.com','Belém'),
-('Vanessa Duarte','vanessa@email.com','Goiânia');
+INSERT INTO clientes (idcliente,nome,email,cidade) 
+VALUES (NULL,'Carlos Silva','carlos@email.com','São Paulo');
+INSERT INTO clientes (idcliente,nome,email,cidade) 
+VALUES (NULL,'Maria Souza','maria@email.com','Rio de Janeiro');
+INSERT INTO clientes (idcliente,nome,email,cidade) 
+VALUES (NULL,'João Pereira','joao@email.com','Curitiba');
+INSERT INTO clientes (idcliente,nome,email,cidade) 
+VALUES (NULL,'Ana Costa','ana@email.com','Porto Alegre');
+INSERT INTO clientes (idcliente,nome,email,cidade) 
+VALUES (NULL,'Pedro Lima','pedro@email.com','Belo Horizonte');
+INSERT INTO clientes (idcliente,nome,email,cidade) 
+VALUES (NULL,'Lucas Alves','lucas@email.com','Campinas');
+INSERT INTO clientes (idcliente,nome,email,cidade) 
+VALUES (NULL,'Fernanda Rocha','fernanda@email.com','Salvador');
+INSERT INTO clientes (idcliente,nome,email,cidade) 
+VALUES (NULL,'Ricardo Gomes','ricardo@email.com','Florianópolis');
+INSERT INTO clientes (idcliente,nome,email,cidade) 
+VALUES (NULL,'Juliana Martins','juliana@email.com','Brasília');
+INSERT INTO clientes (idcliente,nome,email,cidade) 
+VALUES (NULL,'Bruno Carvalho','bruno@email.com','Fortaleza');
+INSERT INTO clientes (idcliente,nome,email,cidade) 
+VALUES (NULL,'Patricia Melo','patricia@email.com','Recife');
+INSERT INTO clientes (idcliente,nome,email,cidade) 
+VALUES (NULL,'André Ribeiro','andre@email.com','Natal');
+INSERT INTO clientes (idcliente,nome,email,cidade) 
+VALUES (NULL,'Camila Freitas','camila@email.com','Manaus');
+INSERT INTO clientes (idcliente,nome,email,cidade) 
+VALUES (NULL,'Thiago Nunes','thiago@email.com','Belém');
+INSERT INTO clientes (idcliente,nome,email,cidade) 
+VALUES (NULL,'Vanessa Duarte','vanessa@email.com','Goiânia');
 
 INSERT INTO produtos (produto,preco,id_categoria) VALUES
 ('Notebook Dell',4500,2),
