@@ -4,24 +4,34 @@
 -- =====================================================
 
 -- 1. Liste todos os registros da tabela clientes.
+SELECT * FROM clientes;
 
 -- 2. Liste todos os produtos cadastrados.
+SELECT pro.produto FROM produtos pro;
 
 -- 3. Mostre apenas os nomes dos clientes.
+SELECT cli.nome FROM clientes cli;
 
 -- 4. Liste os produtos mostrando apenas produto e preco.
+SELECT pro.produto,pro.preco FROM produtos pro;
 
 -- 5. Mostre todas as categorias cadastradas.
+SELECT cat.categoria FROM categorias cat;
 
 -- 6. Liste todos os pedidos registrados.
+SELECT ped.pedido FROM pedidos ped;
 
 -- 7. Liste todas as formas de pagamento registradas.
+SELECT pag.descricao AS forma FROM rec_formapag pag;
 
--- 8. Mostre todas as cidades cadastradas na tabela clientes.
+-- 8. Mostre todas as cidades cadastradas na tabela endereços.
+SELECT end.cidade FROM enderecos end;
 
 -- 9. Liste todos os itens de pedidos.
+SELECT ite.descricaoitem FROM os_item ite;
 
 -- 10. Mostre todos os produtos ordenados por preço.
+SELECT pro.FROM ORDER BY ;
 
 -- =====================================================
 -- EXERCÍCIOS COM WHERE
