@@ -7,58 +7,39 @@
 SELECT * FROM clientes;
 
 -- 2. Liste todos os produtos cadastrados.
-SELECT pro.produto FROM produtos pro;
+SELECT * FROM produtos;
 
 -- 3. Mostre apenas os nomes dos clientes.
-SELECT cli.nome FROM clientes cli;
+SELECT nome FROM clientes;
 
 -- 4. Liste os produtos mostrando apenas produto e preco.
-SELECT pro.produto,pro.preco FROM produtos pro;
+SELECT produto, preco FROM produtos;
 
 -- 5. Mostre todas as categorias cadastradas.
-SELECT cat.categoria FROM categorias cat;
+SELECT * FROM categorias;
 
 -- 6. Liste todos os pedidos registrados.
-SELECT ped.pedido FROM pedidos ped;
+SELECT * FROM pedidos;
 
--- 7. Liste todas as formas de pagamento registradas.
-SELECT pag.descricao AS forma FROM rec_formapag pag;
+-- 7. Mostre os produtos ordenados pelo preço.
+SELECT produto, preco
+FROM produtos
+ORDER BY preco;
 
--- 8. Mostre todas as cidades cadastradas na tabela endereços.
-SELECT end.cidade FROM enderecos end;
+-- 8. Liste os clientes mostrando nome e cidade.
+SELECT nome, cidade
+FROM clientes;
 
--- 9. Liste todos os itens de pedidos.
-SELECT ite.descricaoitem FROM os_item ite;
+-- 9. Liste todos os pagamentos registrados.
+SELECT * FROM pagamentos;
 
--- 10. Mostre todos os produtos ordenados por preço.
-SELECT pro.FROM ORDER BY ;
-
--- =====================================================
--- EXERCÍCIOS COM WHERE
--- =====================================================
-
--- 11. Liste os clientes que moram em São Paulo.
-
--- 12. Liste os produtos com preço maior que 500.
-
--- 13. Liste os produtos com preço menor que 200.
-
--- 14. Mostre os pedidos emitidos em 2025-01-10.
-
--- 15. Liste os pagamentos feitos com Pix.
-
--- 16. Liste os clientes que moram em Curitiba.
-
--- 17. Liste produtos com preço entre 200 e 1000.
-
--- 18. Liste produtos com preço igual a 900.
-
--- 19. Liste pedidos cujo total seja maior que 1000.
-
--- 20. Liste pagamentos cujo valorpago seja maior que 500.
+-- 10. Liste os itens de pedido mostrando produto e quantidade.
+SELECT id_pedido, id_produto, quantidade
+FROM ped_itens;
 
 -- =====================================================
 -- EXERCÍCIOS COM ORDER BY
+-- Banco: comercio
 -- =====================================================
 
 -- 21. Liste todos os clientes ordenados por nome.
@@ -83,6 +64,7 @@ SELECT pro.FROM ORDER BY ;
 
 -- =====================================================
 -- EXERCÍCIOS COM LIMIT
+-- Banco: comercio
 -- =====================================================
 
 -- 31. Mostre os 5 primeiros clientes cadastrados.
@@ -111,6 +93,7 @@ SELECT pro.FROM ORDER BY ;
 
 -- =====================================================
 -- EXERCÍCIOS DE EXPLORAÇÃO DE DADOS
+-- Banco: comercio
 -- =====================================================
 
 -- 41. Liste todas as cidades sem repetição da tabela clientes.
@@ -125,6 +108,7 @@ SELECT pro.FROM ORDER BY ;
 
 -- =====================================================
 -- EXERCÍCIOS COM LIKE
+-- Banco: comercio
 -- =====================================================
 
 -- 46. Liste clientes cujo nome começa com a letra C.

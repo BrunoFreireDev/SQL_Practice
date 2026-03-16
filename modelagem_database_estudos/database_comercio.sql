@@ -9,7 +9,7 @@ CREATE TABLE categorias (
 CREATE TABLE produtos (
              idproduto INT AUTO_INCREMENT PRIMARY KEY
             ,produto       VARCHAR(100)
-            ,preco         DECIMAL(10,2)
+            ,precounitario         DECIMAL(10,2)
             ,id_categoria  INT
 
             ,FOREIGN KEY (id_categoria) REFERENCES categorias(idcategoria)
@@ -108,45 +108,45 @@ VALUES (NULL,'Thiago Nunes','thiago@email.com','Belém');
 INSERT INTO clientes (idcliente,nome,email,cidade) 
 VALUES (NULL,'Vanessa Duarte','vanessa@email.com','Goiânia');
 
-INSERT INTO produtos (idproduto,produto,preco,id_categoria) 
+INSERT INTO produtos (idproduto,produto,precounitario,id_categoria) 
 VALUES (NULL,'Notebook Dell',4500,2);
-INSERT INTO produtos (idproduto,produto,preco,id_categoria) 
+INSERT INTO produtos (idproduto,produto,precounitario,id_categoria) 
 VALUES (NULL,'Mouse Gamer',150,4);
-INSERT INTO produtos (idproduto,produto,preco,id_categoria) 
+INSERT INTO produtos (idproduto,produto,precounitario,id_categoria) 
 VALUES (NULL,'Teclado Mecânico',320,4);
-INSERT INTO produtos (idproduto,produto,preco,id_categoria) 
+INSERT INTO produtos (idproduto,produto,precounitario,id_categoria) 
 VALUES (NULL,'Monitor 24',900,2);
-INSERT INTO produtos (idproduto,produto,preco,id_categoria) 
+INSERT INTO produtos (idproduto,produto,precounitario,id_categoria) 
 VALUES (NULL,'Smartphone Samsung',2800,3);
-INSERT INTO produtos (idproduto,produto,preco,id_categoria) 
+INSERT INTO produtos (idproduto,produto,precounitario,id_categoria) 
 VALUES (NULL,'Smartphone Xiaomi',2200,3);
-INSERT INTO produtos (idproduto,produto,preco,id_categoria) 
+INSERT INTO produtos (idproduto,produto,precounitario,id_categoria) 
 VALUES (NULL,'Headset Gamer',450,4);
-INSERT INTO produtos (idproduto,produto,preco,id_categoria) 
+INSERT INTO produtos (idproduto,produto,precounitario,id_categoria) 
 VALUES (NULL,'Webcam HD',280,2);
-INSERT INTO produtos (idproduto,produto,preco,id_categoria) 
+INSERT INTO produtos (idproduto,produto,precounitario,id_categoria) 
 VALUES (NULL,'SSD 1TB',600,2);
-INSERT INTO produtos (idproduto,produto,preco,id_categoria) 
+INSERT INTO produtos (idproduto,produto,precounitario,id_categoria) 
 VALUES (NULL,'HD 2TB',420,2);
-INSERT INTO produtos (idproduto,produto,preco,id_categoria) 
+INSERT INTO produtos (idproduto,produto,precounitario,id_categoria) 
 VALUES (NULL,'Cadeira Gamer',1200,9);
-INSERT INTO produtos (idproduto,produto,preco,id_categoria) 
+INSERT INTO produtos (idproduto,produto,precounitario,id_categoria) 
 VALUES (NULL,'Mesa Escritório',750,9);
-INSERT INTO produtos (idproduto,produto,preco,id_categoria) 
+INSERT INTO produtos (idproduto,produto,precounitario,id_categoria) 
 VALUES (NULL,'Luminária LED',90,9);
-INSERT INTO produtos (idproduto,produto,preco,id_categoria) 
+INSERT INTO produtos (idproduto,produto,precounitario,id_categoria) 
 VALUES (NULL,'Livro SQL Avançado',120,5);
-INSERT INTO produtos (idproduto,produto,preco,id_categoria) 
+INSERT INTO produtos (idproduto,produto,precounitario,id_categoria) 
 VALUES (NULL,'Livro Python',110,5);
-INSERT INTO produtos (idproduto,produto,preco,id_categoria) 
+INSERT INTO produtos (idproduto,produto,precounitario,id_categoria) 
 VALUES (NULL,'Tênis Running',350,7);
-INSERT INTO produtos (idproduto,produto,preco,id_categoria) 
+INSERT INTO produtos (idproduto,produto,precounitario,id_categoria) 
 VALUES (NULL,'Camiseta Esportiva',90,6);
-INSERT INTO produtos (idproduto,produto,preco,id_categoria) 
+INSERT INTO produtos (idproduto,produto,precounitario,id_categoria) 
 VALUES (NULL,'Relógio Smart',650,8);
-INSERT INTO produtos (idproduto,produto,preco,id_categoria) 
+INSERT INTO produtos (idproduto,produto,precounitario,id_categoria) 
 VALUES (NULL,'Caixa de Som Bluetooth',220,1);
-INSERT INTO produtos (idproduto,produto,preco,id_categoria) 
+INSERT INTO produtos (idproduto,produto,precounitario,id_categoria) 
 VALUES (NULL,'Fone Bluetooth',180,1);
 
 INSERT INTO pedidos (idpedido,id_cliente,emissao,total) 
