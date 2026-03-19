@@ -13,7 +13,8 @@ SELECT * FROM produtos;
 SELECT nome FROM clientes;
 
 -- 4. Liste os produtos mostrando apenas produto e preco.
-SELECT produto, preco FROM produtos;
+SELECT produto,precounitario 
+FROM produtos;
 
 -- 5. Mostre todas as categorias cadastradas.
 SELECT * FROM categorias;
@@ -22,9 +23,9 @@ SELECT * FROM categorias;
 SELECT * FROM pedidos;
 
 -- 7. Mostre os produtos ordenados pelo preço.
-SELECT produto, preco
+SELECT produto,precounitario
 FROM produtos
-ORDER BY preco;
+ORDER BY precounitario;
 
 -- 8. Liste os clientes mostrando nome e cidade.
 SELECT nome, cidade
@@ -43,24 +44,54 @@ FROM ped_itens;
 -- =====================================================
 
 -- 21. Liste todos os clientes ordenados por nome.
+SELECT nome
+FROM   clientes
+ORDER BY nome;
 
 -- 22. Liste produtos ordenados por preço crescente.
+SELECT produto,precounitario
+FROM   produtos
+ORDER BY precounitario;
 
 -- 23. Liste produtos ordenados por preço decrescente.
+SELECT produto,precounitario
+FROM   produtos
+ORDER BY precounitario DESC;
 
 -- 24. Liste pedidos ordenados pela data de emissão.
+SELECT   idpedido,emissao
+FROM     pedidos
+ORDER BY emissao DESC; --Naturalmente apresenta a mais antiga primeiro, não é o que queremos
 
 -- 25. Liste clientes ordenados pela cidade.
+SELECT   nome,cidade
+FROM     clientes
+ORDER BY cidade,nome;
 
 -- 26. Liste pagamentos ordenados pela data de pagamento.
+SELECT   idpagamento,datapagamento
+FROM     pagamentos
+ORDER BY datapagamento;
 
 -- 27. Liste produtos ordenados pelo nome.
+SELECT   produto
+FROM     produtos
+ORDER BY produto;
 
 -- 28. Liste pedidos ordenados pelo total do maior para o menor.
+SELECT   idpedido,total
+FROM     pedidos
+ORDER BY total DESC;
 
 -- 29. Liste itens de pedido ordenados pela quantidade.
+SELECT   id_pedido,id_produto,quantidade
+FROM     ped_itens
+ORDER BY quantidade DESC;
 
 -- 30. Liste categorias ordenadas pela descrição.
+SELECT   descricao
+FROM     categorias
+ORDER BY descricao;
 
 -- =====================================================
 -- EXERCÍCIOS COM LIMIT
