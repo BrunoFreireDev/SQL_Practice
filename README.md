@@ -14,6 +14,10 @@ Aqui estão exercícios, consultas e práticas desenvolvidas durante meu aprendi
 
 - MySQL
 - MySQL Workbench
+- VS Code
+- WampServer
+- Notion (Anotações)
+- NotePad ++
 
 ## Objetivo
 
