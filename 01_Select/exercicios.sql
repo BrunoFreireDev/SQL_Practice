@@ -4,39 +4,50 @@
 -- =====================================================
 
 -- 1. Liste todos os registros da tabela clientes.
-SELECT * FROM clientes;
+SELECT * 
+FROM   clientes;
 
 -- 2. Liste todos os produtos cadastrados.
-SELECT * FROM produtos;
+SELECT * 
+FROM   produtos;
 
 -- 3. Mostre apenas os nomes dos clientes.
-SELECT nome FROM clientes;
+SELECT nome 
+FROM   clientes;
 
 -- 4. Liste os produtos mostrando apenas produto e preco.
-SELECT produto,precounitario 
-FROM produtos;
+SELECT produto
+      ,precounitario 
+FROM   produtos;
 
 -- 5. Mostre todas as categorias cadastradas.
-SELECT * FROM categorias;
+SELECT * 
+FROM   categorias;
 
 -- 6. Liste todos os pedidos registrados.
-SELECT * FROM pedidos;
+SELECT * 
+FROM   pedidos;
 
 -- 7. Mostre os produtos ordenados pelo preço.
-SELECT produto,precounitario
-FROM produtos
+SELECT   produto
+        ,precounitario
+FROM     produtos
 ORDER BY precounitario;
 
 -- 8. Liste os clientes mostrando nome e cidade.
-SELECT nome, cidade
-FROM clientes;
+SELECT nome
+      ,cidade
+FROM   clientes;
 
 -- 9. Liste todos os pagamentos registrados.
-SELECT * FROM pagamentos;
+SELECT * 
+FROM   pagamentos;
 
 -- 10. Liste os itens de pedido mostrando produto e quantidade.
-SELECT id_pedido, id_produto, quantidade
-FROM ped_itens;
+SELECT id_pedido
+      ,id_produto
+      ,quantidade
+FROM   ped_itens;
 
 -- =====================================================
 -- EXERCÍCIOS COM ORDER BY
@@ -44,32 +55,37 @@ FROM ped_itens;
 -- =====================================================
 
 -- 21. Liste todos os clientes ordenados por nome.
-SELECT nome
-FROM   clientes
+SELECT   nome
+FROM     clientes
 ORDER BY nome;
 
 -- 22. Liste produtos ordenados por preço crescente.
-SELECT produto,precounitario
-FROM   produtos
+SELECT   produto
+        ,precounitario
+FROM     produtos
 ORDER BY precounitario;
 
 -- 23. Liste produtos ordenados por preço decrescente.
-SELECT produto,precounitario
-FROM   produtos
+SELECT   produto
+        ,precounitario
+FROM     produtos
 ORDER BY precounitario DESC;
 
 -- 24. Liste pedidos ordenados pela data de emissão.
-SELECT   idpedido,emissao
+SELECT   idpedido
+        ,emissao
 FROM     pedidos
 ORDER BY emissao DESC; --Naturalmente apresenta a mais antiga primeiro, não é o que queremos
 
 -- 25. Liste clientes ordenados pela cidade.
-SELECT   nome,cidade
+SELECT   nome
+        ,cidade
 FROM     clientes
 ORDER BY cidade,nome;
 
 -- 26. Liste pagamentos ordenados pela data de pagamento.
-SELECT   idpagamento,datapagamento
+SELECT   idpagamento
+        ,datapagamento
 FROM     pagamentos
 ORDER BY datapagamento;
 
@@ -79,12 +95,15 @@ FROM     produtos
 ORDER BY produto;
 
 -- 28. Liste pedidos ordenados pelo total do maior para o menor.
-SELECT   idpedido,total
+SELECT   idpedido
+        ,total
 FROM     pedidos
 ORDER BY total DESC;
 
 -- 29. Liste itens de pedido ordenados pela quantidade.
-SELECT   id_pedido,id_produto,quantidade
+SELECT   id_pedido
+        ,id_produto
+        ,quantidade
 FROM     ped_itens
 ORDER BY quantidade DESC;
 
