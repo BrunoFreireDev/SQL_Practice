@@ -117,29 +117,73 @@ ORDER BY descricao;
 -- Banco: comercio
 -- =====================================================
 
--- 31. Mostre os 5 primeiros clientes cadastrados.
+-- 31. Mostre os 5 primeiros clientes cadastrados (considerando ordem de ID).
+SELECT   *
+FROM     clientes
+ORDER BY idcliente ASC
+LIMIT    5;
 
 -- 32. Mostre os 3 produtos mais caros.
+SELECT   idproduto, produto, precounitario
+FROM     produtos
+ORDER BY precounitario DESC
+LIMIT    3;
 
 -- 33. Mostre os 5 produtos mais baratos.
+SELECT   idproduto, produto, precounitario
+FROM     produtos
+ORDER BY precounitario ASC
+LIMIT    5;
 
--- 34. Mostre os 10 primeiros pedidos registrados.
+-- 34. Mostre os 10 primeiros pedidos registrados (por ordem de cadastro).
+SELECT   idpedido, id_cliente, emissao, total
+FROM     pedidos
+ORDER BY idpedido ASC
+LIMIT    10;
 
 -- 35. Mostre os 5 primeiros pagamentos registrados.
+SELECT   idpagamento, id_pedido, forma, valorpago, datapagamento
+FROM     pagamentos
+ORDER BY idpagamento ASC
+LIMIT    5;
+
 
 -- =====================================================
 -- EXERCÍCIOS COM CONDIÇÕES COMBINADAS
+-- Banco: comercio
 -- =====================================================
 
 -- 36. Liste produtos com preço maior que 200 e menor que 1000.
+--     (BETWEEN inclui os limites → se quiser estrito, use > e <)
+SELECT   idproduto, produto, precounitario
+FROM     produtos
+WHERE    precounitario BETWEEN 200.00 AND 1000.00
+ORDER BY precounitario;
 
 -- 37. Liste clientes que moram em São Paulo ou Curitiba.
+SELECT   nome, cidade, email
+FROM     clientes
+WHERE    cidade IN ('São Paulo', 'Curitiba')
+ORDER BY cidade, nome;
 
 -- 38. Liste pedidos com valor total maior que 500.
+SELECT   idpedido, id_cliente, emissao, total
+FROM     pedidos
+WHERE    total > 500.00
+ORDER BY total DESC;
 
 -- 39. Liste pagamentos feitos com Cartão.
+--     (verifique se a forma está exatamente como 'Cartão' ou 'cartao', 'Credito' etc.)
+SELECT   idpagamento, id_pedido, forma, valorpago, datapagamento
+FROM     pagamentos
+WHERE    forma = 'Cartão';
 
--- 40. Liste produtos cujo preço seja maior que 300, ordenados pelo preço.
+-- 40. Liste produtos cujo preço seja maior que 300, ordenados pelo preço (crescente).
+SELECT   idproduto, produto, precounitario
+FROM     produtos
+WHERE    precounitario > 300.00
+ORDER BY precounitario ASC;
+
 
 -- =====================================================
 -- EXERCÍCIOS DE EXPLORAÇÃO DE DADOS
@@ -147,14 +191,32 @@ ORDER BY descricao;
 -- =====================================================
 
 -- 41. Liste todas as cidades sem repetição da tabela clientes.
+SELECT DISTINCT cidade
+FROM   clientes
+WHERE  cidade IS NOT NULL
+ORDER BY cidade;
 
 -- 42. Liste todas as formas de pagamento diferentes registradas.
+SELECT DISTINCT forma
+FROM   pagamentos
+WHERE  forma IS NOT NULL
+ORDER BY forma;
 
--- 43. Liste todas as datas de emissão de pedidos.
+-- 43. Liste todas as datas de emissão de pedidos (mais recente primeiro).
+SELECT DISTINCT emissao
+FROM   pedidos
+ORDER BY emissao DESC;
 
--- 44. Liste todos os valores de total dos pedidos.
+-- 44. Liste todos os valores de total dos pedidos, sem repetição, ordenados.
+SELECT DISTINCT total
+FROM   pedidos
+ORDER BY total DESC;
 
--- 45. Liste todas as quantidades registradas em ped_itens.
+-- 45. Liste todas as quantidades registradas em ped_itens (sem repetição).
+SELECT DISTINCT quantidade
+FROM   ped_itens
+ORDER BY quantidade;
+
 
 -- =====================================================
 -- EXERCÍCIOS COM LIKE
@@ -162,11 +224,32 @@ ORDER BY descricao;
 -- =====================================================
 
 -- 46. Liste clientes cujo nome começa com a letra C.
+SELECT nome, cidade, email
+FROM   clientes
+WHERE  nome LIKE 'C%'
+ORDER BY nome;
 
--- 47. Liste produtos que possuem a palavra Gamer no nome.
+-- 47. Liste produtos que possuem a palavra 'Gamer' no nome (case insensitive em muitos SGBDs).
+SELECT idproduto, produto, precounitario
+FROM   produtos
+WHERE  produto LIKE '%Gamer%'
+ORDER BY produto;
 
--- 48. Liste clientes cujo email contém a palavra email.
+-- 48. Liste clientes cujo email contém a palavra 'email'.
+--     (se for email de teste, pode ser comum — ajuste o padrão se necessário)
+SELECT nome, email, cidade
+FROM   clientes
+WHERE  email LIKE '%email%'
+ORDER BY nome;
 
--- 49. Liste produtos cujo nome termina com HD.
+-- 49. Liste produtos cujo nome termina com 'HD'.
+SELECT idproduto, produto, precounitario
+FROM   produtos
+WHERE  produto LIKE '%HD'
+ORDER BY produto;
 
--- 50. Liste clientes cujo nome contém Silva.
+-- 50. Liste clientes cujo nome contém 'Silva'.
+SELECT nome, cidade, email
+FROM   clientes
+WHERE  nome LIKE '%Silva%'
+ORDER BY nome;
