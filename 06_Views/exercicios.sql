@@ -32,3 +32,48 @@
 -- 214. Crie uma view que liste os pedidos sem pagamento registrado.
 
 -- 215. Crie uma view com produtos com estoque baixo (ex.: menor que 10 unidades).
+
+-- 246. Crie uma view com:
+-- cliente + total gasto + quantidade de pedidos
+
+-- 247. Crie uma view com:
+-- produto + total vendido + quantidade vendida
+
+-- 248. Crie uma view com:
+-- categoria + faturamento total
+
+-- 249. Crie uma view com:
+-- pedidos + status (Pago / Pendente baseado em pagamentos)
+
+-- 250. Crie uma view com:
+-- pedidos + diferença entre total e valor pago
+
+-- 251. Crie uma view com:
+-- produtos mais vendidos por categoria
+
+-- 252. Crie uma view com:
+-- clientes que nunca compraram
+
+-- 253. Crie uma view com:
+-- produtos com preço acima da média geral
+
+-- 254. Crie uma view com:
+-- média de valor por pedido por cidade
+
+-- 255. Crie uma view com:
+-- top 3 cidades com maior faturamento
+
+-- 256. Crie uma view com:
+-- pedidos com mais de um item
+
+-- 257. Crie uma view com:
+-- produtos com baixa rotatividade (pouco vendidos)
+
+-- 258. Crie uma view com:
+-- pedidos feitos por dia
+
+-- 259. Crie uma view com:
+-- forma de pagamento + total movimentado
+
+-- 260. Crie uma view com:
+-- produtos nunca vendidos (anti-join)

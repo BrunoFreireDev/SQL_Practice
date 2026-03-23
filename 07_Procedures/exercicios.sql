@@ -32,3 +32,41 @@
 -- 199. Crie uma procedure que aplique um desconto percentual em todos os produtos.
 
 -- 200. Crie uma procedure que liste os clientes que não fizeram nenhum pedido.
+
+-- 231. Crie uma procedure que recalcula o total de um pedido somando os valores de ped_itens.
+
+-- 232. Crie uma procedure que receba idpedido e retorne:
+-- - total de itens
+-- - valor total
+-- - quantidade de produtos diferentes
+
+-- 233. Crie uma procedure que receba idcliente e retorne o ticket médio dos pedidos dele.
+
+-- 234. Crie uma procedure que insira um pedido com múltiplos itens (simulando carrinho).
+
+-- 235. Crie uma procedure que cancele um pedido (deletando itens, pagamentos e o pedido).
+
+-- 236. Crie uma procedure que retorne os produtos mais vendidos por categoria.
+
+-- 237. Crie uma procedure que identifique clientes inativos (sem pedidos nos últimos X dias).
+
+-- 238. Crie uma procedure que retorne o faturamento por cidade.
+
+-- 239. Crie uma procedure que aplique aumento de preço apenas para uma categoria específica.
+
+-- 240. Crie uma procedure que retorne os pedidos que estão com pagamento inconsistente
+-- (total != soma dos pagamentos).
+
+-- 241. Crie uma procedure que gere um ranking de clientes por valor gasto.
+
+-- 242. Crie uma procedure que mova produtos de uma categoria para outra.
+
+-- 243. Crie uma procedure que retorne os produtos com maior margem de venda
+-- (simule custo = 70% do preço).
+
+-- 244. Crie uma procedure que limpe dados órfãos (pedidos sem itens).
+
+-- 245. Crie uma procedure que retorne estatísticas gerais:
+-- - total de clientes
+-- - total de pedidos
+-- - faturamento total
