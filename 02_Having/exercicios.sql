@@ -14,10 +14,38 @@ Para datas/meses, use funções como DATE_FORMAT(emissao, '%Y-%m') ou CONCAT(YEA
 -- =====================================================
 
 -- 141. Mostre as cidades que têm mais de 3 clientes cadastrados (nome da cidade e contagem).
+SELECT   cidade
+        ,COUNT(DISTINCT idcliente) AS total
+FROM     clientes
+GROUP BY cidade
+HAVING   COUNT(DISTINCT idcliente) > 3;
+
+-- Correção: (pk sempre será distinta)
+SELECT   cidade,
+         COUNT(idcliente) AS total
+FROM     clientes
+GROUP BY cidade
+HAVING   COUNT(idcliente) > 3;
 
 -- 142. Liste os clientes que fizeram mais de 2 pedidos (nome do cliente e quantidade de pedidos).
+SELECT   cli.nome
+        ,SUM(ped.idpedido) AS quantidade_total
+FROM     clientes  cli
+JOIN     pedidos   ped
+  ON     ped.id_cliente = cli.idcliente
+GROUP BY cli.nome
+HAVING   SUM(ped.idpedido) > 2
+ORDER BY cli.nome;
 
 -- 143. Mostre as categorias que possuem mais de 5 produtos cadastrados (descrição da categoria e contagem de produtos).
+SELECT    cat.descricao
+         ,COUNT(pro.idproduto) AS produtos
+FROM      categorias cat
+JOIN      produtos   pro
+  ON      cat.idcategoria = pro.id_categoria
+GROUP BY  cat.descricao
+HAVING    COUNT(pro.produto) > 5
+ORDER BY  cat.descricao;
 
 -- 144. Liste as formas de pagamento que foram usadas em mais de 4 pagamentos (forma e contagem).
 
