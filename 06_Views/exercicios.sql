@@ -1,3 +1,18 @@
+/*/*View é consulta pronta pra análise.
+
+Regra de ouro:
+
+Se parece relatório → é VIEW
+
+Exemplo:
+
+faturamento por cliente
+produto mais vendido
+pedidos pendentes
+
+Se tiver GROUP BY, JOIN, agregação → tá no caminho certo.*/
+*/
+
 --=====================================================
 -- EXERCÍCIOS COM VIEWS
 -- Banco: comercio

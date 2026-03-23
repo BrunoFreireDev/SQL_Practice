@@ -1,3 +1,19 @@
+/*Pensa sempre assim:
+
+Entrada → Processamento → Saída
+
+Exemplo real do teu banco:
+
+👉 “Recalcular total do pedido”
+
+Checklist mental:
+
+Entrada: idpedido
+Processamento: SUM(ped_itens.valor)
+Saída: UPDATE pedidos.total
+
+Se você não fizer isso estruturado, vira gambiarra.*/
+
 --=====================================================+
 -- EXERCÍCIOS COM PROCEDURES                           |
 -- Banco: comercio                                     |

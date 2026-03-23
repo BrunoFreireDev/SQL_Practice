@@ -1,3 +1,18 @@
+/*TRIGGERS
+
+Trigger é automação invisível
+
+Regra brutal:
+
+“Isso precisa acontecer SEM depender do usuário?”
+
+Se sim → trigger.
+
+Exemplo clássico no teu banco:
+
+Inseriu item → recalcula total
+Inseriu pagamento → valida valor*/
+
 --=====================================================
 -- EXERCÍCIOS COM TRIGGERS
 -- Banco: comercio
