@@ -95,16 +95,67 @@ GROUP BY  CONCAT(EXTRACT(YEAR FROM emissao),'/', EXTRACT(MONTH FROM emissao))
 HAVING    COUNT(idpedido) > 5;
 
 -- 149. Mostre as categorias cujo preço médio dos produtos é maior que R$ 300,00 (descrição e média de precounitario).
+SELECT   cat.descricao,AVG(pro.precounitario) AS "Média de preço"
+FROM     produtos pro
+JOIN     categorias cat
+  ON     cat.idcategoria = pro.id_categoria
+GROUP BY cat.descricao
+HAVING   AVG(pro.precounitario) > 300.00;
 
 
 -- 150. Liste os clientes que compraram em mais de 2 datas diferentes (nome e contagem distinta de emissao).
+SELECT   cli.nome,COUNT(DISTINCT ped.emissao) AS emissao
+FROM     pedidos  ped
+JOIN     clientes cli
+  ON     cli.idcliente = ped.id_cliente
+GROUP BY cli.nome
+HAVING   COUNT(DISTINCT ped.emissao) > 2;
 
 -- 151. Mostre os produtos cuja quantidade total vendida é maior que 20 unidades (nome do produto e soma de quantidade).
+SELECT   pro.produto,SUM(ite.quantidade) AS "Total vendido"
+FROM     ped_itens ite
+JOIN     produtos  pro
+  ON     pro.idproduto = ite.id_produto
+GROUP BY pro.produto
+HAVING   SUM(ite.quantidade) > 20;
 
 -- 152. Liste as cidades cujo total de vendas (soma dos pedidos dos clientes daquela cidade) é maior que R$ 5.000,00.
+SELECT   cli.cidade,SUM(ped.total) AS "Total vendido"
+FROM     pedidos  ped
+JOIN     clientes cli
+  ON     ped.id_cliente = cli.idcliente
+GROUP BY cli.cidade
+HAVING   SUM(ped.total) > 5000.00;
 
 -- 153. Mostre os pedidos cujo valor total é maior que a média geral dos pedidos (número do pedido e total).
+SELECT   ped.idpedido
+        ,ped.total
+FROM     pedidos ped
+GROUP BY ped.idpedido
+HAVING   ped.total > AVG(ped.total); -- REVISAR
+
+-- Correção:
+SELECT   ped.idpedido
+        ,ped.total
+FROM     pedidos ped
+GROUP BY ped.idpedido
+        ,ped.total
+HAVING   ped.total > (
+    SELECT AVG(total) 
+    FROM   pedidos);
 
 -- 154. Liste as formas de pagamento cujo valor total pago com aquela forma é maior que R$ 1.000,00 (forma e soma de valorpago).
+SELECT   pag.forma,SUM(pag.valorpago) AS "Total pago com a forma"
+FROM     pagamentos pag
+GROUP BY pag.forma
+HAVING   SUM(pag.valorpago) > 1000.00;
 
 -- 155. Mostre os clientes que gastaram em média mais de R$ 800,00 por pedido (nome do cliente, contagem de pedidos e média do total por pedido).
+SELECT   cli.nome
+        ,COUNT(ped.idpedido) AS "Total de pedidos"
+        ,AVG(ped.total)      AS "Média dos pedidos"
+FROM     pedidos  ped
+JOIN     clientes cli
+  ON     cli.idcliente = ped.id_cliente
+GROUP BY cli.nome
+HAVING   AVG(ped.total) > 800.00;

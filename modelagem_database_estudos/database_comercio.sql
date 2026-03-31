@@ -7,9 +7,9 @@ CREATE TABLE categorias (
 );
 
 CREATE TABLE produtos (
-             idproduto INT AUTO_INCREMENT PRIMARY KEY
+             idproduto     INT AUTO_INCREMENT PRIMARY KEY
             ,produto       VARCHAR(100)
-            ,precounitario         DECIMAL(10,2)
+            ,precounitario DECIMAL(10,2)
             ,id_categoria  INT
 
             ,FOREIGN KEY (id_categoria) REFERENCES categorias(idcategoria)
