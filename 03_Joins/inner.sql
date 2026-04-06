@@ -61,7 +61,18 @@ ORDER BY cat.descricao;
 SELECT cli.nome
       ,ped.emissao
       ,ped.total
-      ,RANK() OVER (ORDER BY ped.total DESC) as ranking --Função nova, lembrar de testar mais
+      ,DENSE_RANK() OVER (ORDER BY ped.total DESC) as ranking --Função nova, lembrar de testar mais
+FROM   clientes cli
+JOIN   pedidos  ped
+  ON   ped.id_cliente = cli.idcliente
+WHERE  ped.total > 1000.00;
+
+OU
+
+SELECT cli.nome
+      ,ped.emissao
+      ,ped.total
+      ,DENSE_RANK() OVER (PARTITION BY cli.nome ORDER BY ped.total DESC) as ranking --Função nova, lembrar de testar mais
 FROM   clientes cli
 JOIN   pedidos  ped
   ON   ped.id_cliente = cli.idcliente
@@ -80,3 +91,44 @@ WHERE  ped.total > 1000.00;
 -- 64. Mostre o número do pedido, o nome do cliente e a forma de pagamento usada em cada pedido pago.
 
 -- 65. Liste os 5 produtos mais vendidos (considerando a soma da quantidade vendida em todos os itens), com o nome do produto e a quantidade total.
+
+-- LISTA AVANÇADA — JOIN + WINDOW FUNCTION
+-- Nível 1 (entendimento + aplicação básica)
+-- 66.Liste o nome do cliente, número do pedido, total do pedido e o ranking global dos pedidos por valor (do maior para o menor).
+
+-- 67.Mostre o nome do cliente, número do pedido e total, junto com a média de valor dos pedidos daquele cliente.
+
+-- 68.Liste o nome do produto, quantidade vendida e a quantidade média vendida daquele produto.
+
+-- 69.Mostre o número do pedido, total e o valor do pedido anterior (ordenado por data).
+
+-- 70.Liste o nome do cliente, número do pedido e total, e mostre a diferença entre o pedido atual e o anterior do mesmo cliente.
+
+-- Nível 2 (começa a ficar interessante)
+-- 71.Liste o nome do cliente, número do pedido e total, e mostre o ranking dos pedidos dentro de cada cliente.
+
+-- 72.Mostre o nome do produto, categoria e preço, junto com o ranking de preço dentro da categoria.
+
+-- 73.Liste os pedidos com total acima da média geral, mostrando também a média geral em cada linha.
+
+-- 74.Mostre o nome do cliente e o total dos pedidos, junto com o percentual que cada pedido representa no total geral.
+
+-- 75.Liste o nome do produto e a quantidade total vendida, junto com o percentual que cada produto representa do total vendido.
+
+-- Nível 3 (nível analista de verdade)
+-- 76.Mostre o nome do cliente, número do pedido e total, e traga apenas os 3 maiores pedidos de cada cliente.
+
+-- 77.Liste os produtos e a quantidade vendida, mostrando o acumulado de vendas ao longo do tempo.
+
+-- 78.Mostre o nome do cliente, número do pedido e total, e identifique se o pedido foi:
+-- “MAIOR”
+-- “MENOR”
+-- “IGUAL”
+-- em relação ao pedido anterior do mesmo cliente.
+
+-- 79.Liste o nome do produto, categoria e preço, mostrando a diferença de preço para o produto anterior dentro da mesma categoria.
+
+-- 80.Mostre o número do pedido, total e classifique cada pedido como:
+-- “ACIMA DA MÉDIA”
+-- “ABAIXO DA MÉDIA”
+-- comparando com a média geral.
