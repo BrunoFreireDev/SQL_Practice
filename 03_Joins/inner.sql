@@ -79,18 +79,42 @@ JOIN   pedidos  ped
 WHERE  ped.total > 1000.00;
 
 -- 59. Liste o nome do produto, o preço unitário e a quantidade vendida em cada item de pedido.
+SELECT pro.produto
+      ,pro.precounitario
+      ,COUNT(ped.quantidade) AS quantidade_vendida 
+FROM   produtos  pro
+JOIN   ped_itens ped
+  ON   ped.id_produto = pro.idproduto
+GROUP BY pro.produto;
 
 -- 60. Mostre o nome do cliente, a cidade e o número do pedido apenas para clientes que moram em Porto Alegre.
+SELECT cli.nome
+      ,cli.cidade
+      ,ped.idpedido 
+FROM   clientes cli
+JOIN   pedidos  ped
+  ON   ped.id_cliente = cli.idcliente
+WHERE  cli.cidade = 'Porto Alegre';
 
 -- 61. Liste a descrição da categoria e a quantidade de produtos cadastrados em cada categoria.
+SELECT   cat.descricao    AS categoria
+        ,COUNT(idproduto) AS produtos_na_categoria
+FROM     categorias cat
+JOIN     produtos   pro
+  ON     pro.id_categoria = cat.idcategoria
+GROUP BY cat.idcategoria;
 
 -- 62. Mostre o nome do cliente e a soma total dos valores dos pedidos que ele fez, ordenado do maior gastador para o menor.
 
+
 -- 63. Liste o nome do produto, a categoria e o preço unitário apenas para produtos com preço acima de R$ 500,00, ordenados do mais caro para o mais barato.
+
 
 -- 64. Mostre o número do pedido, o nome do cliente e a forma de pagamento usada em cada pedido pago.
 
+
 -- 65. Liste os 5 produtos mais vendidos (considerando a soma da quantidade vendida em todos os itens), com o nome do produto e a quantidade total.
+
 
 -- LISTA AVANÇADA — JOIN + WINDOW FUNCTION
 -- Nível 1 (entendimento + aplicação básica)
