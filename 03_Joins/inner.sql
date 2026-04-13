@@ -65,7 +65,7 @@ SELECT cli.nome
 FROM   clientes cli
 JOIN   pedidos  ped
   ON   ped.id_cliente = cli.idcliente
-WHERE  ped.total > 1000.00;
+WHERE  ped.total > 1000.00; -- Rever essa query
 
 OU
 
@@ -105,10 +105,35 @@ JOIN     produtos   pro
 GROUP BY cat.idcategoria;
 
 -- 62. Mostre o nome do cliente e a soma total dos valores dos pedidos que ele fez, ordenado do maior gastador para o menor.
-
+SELECT cli.nome
+      ,SUM(ped.total) AS Total_gasto  
+FROM     clientes cli
+JOIN     pedidos  ped
+  ON     ped.id_cliente = cli.idcliente
+GROUP BY cli.nome
+ORDER BY 2 DESC;
 
 -- 63. Liste o nome do produto, a categoria e o preço unitário apenas para produtos com preço acima de R$ 500,00, ordenados do mais caro para o mais barato.
+SELECT   pro.produto
+        ,cat.descricao
+        ,pro.precounitario
+FROM     produtos pro
+JOIN     categorias cat
+  ON     cat.idcategoria = pro.id_categoria
+WHERE    pro.precounitario > 500.00
+ORDER BY 3 DESC;
 
+-- OU
+
+SELECT   pro.produto
+        ,cat.descricao
+        ,pro.precounitario
+        ,DENSE_RANK() OVER(ORDER BY precounitario DESC) AS Ranking
+FROM     produtos pro
+JOIN     categorias cat
+  ON     cat.idcategoria = pro.id_categoria
+WHERE    pro.precounitario > 500.00
+ORDER BY 3 DESC;
 
 -- 64. Mostre o número do pedido, o nome do cliente e a forma de pagamento usada em cada pedido pago.
 
