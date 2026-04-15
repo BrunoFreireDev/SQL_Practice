@@ -136,10 +136,25 @@ WHERE    pro.precounitario > 500.00
 ORDER BY 3 DESC;
 
 -- 64. Mostre o número do pedido, o nome do cliente e a forma de pagamento usada em cada pedido pago.
-
+SELECT ped.idpedido 
+      ,cli.nome
+      ,pag.forma
+FROM   clientes   cli
+JOIN   pedidos    ped
+  ON   ped.id_cliente = cli.idcliente
+JOIN   pagamentos pag
+  ON   ped.idpedido = pag.id_pedido
+ORDER BY 3,2;
 
 -- 65. Liste os 5 produtos mais vendidos (considerando a soma da quantidade vendida em todos os itens), com o nome do produto e a quantidade total.
-
+SELECT pro.produto
+      ,SUM(ped.quantidade) AS quantidade_vendida 
+FROM   produtos  pro
+JOIN   ped_itens ped
+  ON   ped.id_produto = pro.idproduto
+GROUP BY pro.produto
+ORDER BY 2 DESC
+LIMIT 5;
 
 -- LISTA AVANÇADA — JOIN + WINDOW FUNCTION
 -- Nível 1 (entendimento + aplicação básica)
