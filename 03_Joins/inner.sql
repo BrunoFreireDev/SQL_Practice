@@ -169,6 +169,7 @@ JOIN   pedidos  ped
 
 -- 67.Mostre o nome do cliente, número do pedido e total, junto com a média de valor dos pedidos daquele cliente.
 
+
 -- 68.Liste o nome do produto, quantidade vendida e a quantidade média vendida daquele produto.
 
 -- 69.Mostre o número do pedido, total e o valor do pedido anterior (ordenado por data).
