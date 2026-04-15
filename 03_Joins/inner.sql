@@ -159,6 +159,13 @@ LIMIT 5;
 -- LISTA AVANÇADA — JOIN + WINDOW FUNCTION
 -- Nível 1 (entendimento + aplicação básica)
 -- 66.Liste o nome do cliente, número do pedido, total do pedido e o ranking global dos pedidos por valor (do maior para o menor).
+SELECT cli.nome
+      ,ped.idpedido  AS pedido
+      ,ped.total
+      ,DENSE_RANK() OVER(ORDER BY ped.total DESC) AS ranking
+FROM   clientes cli
+JOIN   pedidos  ped
+  ON   cli.idcliente = ped.id_cliente;
 
 -- 67.Mostre o nome do cliente, número do pedido e total, junto com a média de valor dos pedidos daquele cliente.
 
