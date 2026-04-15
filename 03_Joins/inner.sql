@@ -162,15 +162,28 @@ LIMIT 5;
 SELECT cli.nome
       ,ped.idpedido  AS pedido
       ,ped.total
-      ,DENSE_RANK() OVER(ORDER BY ped.total DESC) AS ranking
+      ,DENSE_RANK() OVER(ORDER BY ped.total DESC) AS top_10
 FROM   clientes cli
+JOIN   pedidos  ped
+  ON   cli.idcliente = ped.id_cliente
+LIMIT 10;
+
+-- 67.Mostre o nome do cliente, número do pedido e total, junto com a média de valor dos pedidos daquele cliente.
+SELECT cli.nome
+      ,ped.idpedido
+      ,ped.total
+      ,AVG(ped.total) OVER(PARTITION BY cli.idcliente ORDER BY ped.idpedido) AS Média_por_cliente --DENSE_RANK e RANK não precisam de uma
+FROM   clientes cli                                                                               --coluna de referencia, AVG sim.
 JOIN   pedidos  ped
   ON   cli.idcliente = ped.id_cliente;
 
--- 67.Mostre o nome do cliente, número do pedido e total, junto com a média de valor dos pedidos daquele cliente.
-
-
 -- 68.Liste o nome do produto, quantidade vendida e a quantidade média vendida daquele produto.
+SELECT pro.produto
+      ,ped.quantidade AS quantidade_vendida
+      ,AVG(ped.quantidade) OVER(PARTITION BY pro.idproduto ORDER BY pro.produto) AS media_vendida
+FROM   produtos  pro
+JOIN   ped_itens ped
+  ON   ped.id_produto = pro.idproduto;
 
 -- 69.Mostre o número do pedido, total e o valor do pedido anterior (ordenado por data).
 
