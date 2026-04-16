@@ -25,7 +25,7 @@ SELECT   ped.idpedido
 FROM     pedidos  ped
 JOIN     clientes cli
   ON     cli.idcliente = ped.id_cliente
-ORDER BY ped.emissao ASC;
+ORDER BY ped.emissao ASC; -- Correto é DESC.
 
 -- 54. Mostre o número do pedido, o nome do produto comprado e a quantidade para cada item de pedido.
 SELECT ped.id_pedido
@@ -35,6 +35,9 @@ FROM   ped_itens  ped
 JOIN   produtos   pro
   ON   pro.idproduto = ped.id_produto
 GROUP BY ped.id_pedido;
+
+-- Correção:
+SUM(ped.quantidade) AS qtd_comprada
 
 
 -- 55. Liste o nome do cliente, a cidade e o valor total de todos os pedidos que ele realizou.
@@ -46,6 +49,9 @@ JOIN     pedidos  ped
   ON     ped.id_cliente = cli.idcliente
 GROUP BY cli.idcliente
 ORDER BY cli.nome;
+
+-- Correção:
+GROUP BY cli.idcliente, cli.nome, cli.cidade
 
 -- 56. Mostre a descrição da categoria e o nome do produto, ordenados por categoria e depois por produto.
 SELECT   pro.produto
@@ -87,6 +93,12 @@ JOIN   ped_itens ped
   ON   ped.id_produto = pro.idproduto
 GROUP BY pro.produto;
 
+-- Correção:
+SUM(ped.quantidade)
+
+E GROUP BY novamente incompleto:
+GROUP BY pro.produto, pro.precounitario;
+
 -- 60. Mostre o nome do cliente, a cidade e o número do pedido apenas para clientes que moram em Porto Alegre.
 SELECT cli.nome
       ,cli.cidade
@@ -103,6 +115,9 @@ FROM     categorias cat
 JOIN     produtos   pro
   ON     pro.id_categoria = cat.idcategoria
 GROUP BY cat.idcategoria;
+
+-- Correção:
+GROUP BY cat.idcategoria, cat.descricao;
 
 -- 62. Mostre o nome do cliente e a soma total dos valores dos pedidos que ele fez, ordenado do maior gastador para o menor.
 SELECT cli.nome
@@ -177,6 +192,9 @@ FROM   clientes cli                                                             
 JOIN   pedidos  ped
   ON   cli.idcliente = ped.id_cliente;
 
+-- Correção:
+AVG(ped.total) OVER(PARTITION BY cli.idcliente)
+
 -- 68.Liste o nome do produto, quantidade vendida e a quantidade média vendida daquele produto.
 SELECT pro.produto
       ,ped.quantidade AS quantidade_vendida
@@ -184,6 +202,9 @@ SELECT pro.produto
 FROM   produtos  pro
 JOIN   ped_itens ped
   ON   ped.id_produto = pro.idproduto;
+
+-- Correção:
+AVG(ped.quantidade) OVER(PARTITION BY pro.idproduto)
 
 -- 69.Mostre o número do pedido, total e o valor do pedido anterior (ordenado por data).
 
