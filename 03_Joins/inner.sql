@@ -207,6 +207,10 @@ JOIN   ped_itens ped
 AVG(ped.quantidade) OVER(PARTITION BY pro.idproduto)
 
 -- 69.Mostre o número do pedido, total e o valor do pedido anterior (ordenado por data).
+SELECT ped.idpedido
+      ,ped.total
+      ,LAG(ped.total,1) OVER(ORDER BY ped.emissao) AS Vlr_anterior 
+FROM   pedidos ped;
 
 -- 70.Liste o nome do cliente, número do pedido e total, e mostre a diferença entre o pedido atual e o anterior do mesmo cliente.
 
