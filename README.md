@@ -1,4 +1,15 @@
-# SQL Practice
+<div align="center">
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:1e293b,55:0f172a,100:020617&height=180&section=header&text=SQL%20Practice&fontSize=38&fontColor=38bdf8&animation=fadeIn&fontAlignY=40" width="100%"/>
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/bruno-freire-log)
+[![Status](https://img.shields.io/badge/Status-Em%20Andamento-f59e0b?style=for-the-badge)]()
+
+<br>
+
+</div>
+
+## Sobre o Projeto
 
 Repositório dedicado aos meus estudos, evolução e prática em banco de dados relacional. Aqui estão reunidas consultas, scripts, exercícios e rotinas **desenvolvidos integralmente utilizando MySQL** para consolidar o domínio de SQL.
 
@@ -37,3 +48,25 @@ O conteúdo está organizado por categorias de complexidade e funcionalidade:
 ## Objetivo
 
 Praticar e aprofundar o conhecimento técnico em manipulação, consulta e administração de bancos de dados relacionais com foco em MySQL, simulando cenários reais e aprimorando a lógica de desenvolvimento.
+
+---
+
+## English version
+
+Repository dedicated to my studies, evolution, and practice in relational databases. Here you will find queries, scripts, exercises, and routines **developed entirely using MySQL** to consolidate SQL mastery.
+
+### Technologies and Tools Used
+* **Database System:** MySQL
+* **Local Environment:** WampServer
+* **Management & Query Tools:** MySQL Workbench
+* **Code Editors:** VS Code, NotePad++
+* **Notes & Documentation:** Notion
+
+### Objective
+Practice and deepen technical knowledge in relational database manipulation, querying, and administration focusing on MySQL, simulating real-world scenarios and improving development logic.
+
+---
+
+<div align="center">
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:1e293b,55:0f172a,100:020617&height=100&section=footer" width="100%"/>
+</div>
